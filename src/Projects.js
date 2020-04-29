@@ -8,7 +8,9 @@ export default class Projects extends Component {
                 <h1>Projects</h1>
                 <div>
                     <Link to="/project" >
-                        Project 1
+                        <div>
+                            
+                        </div>
                     </Link>
                 </div>
             </div>
