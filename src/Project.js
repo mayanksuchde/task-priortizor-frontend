@@ -7,7 +7,34 @@ export default class Project extends Component {
     constructor(props){
         super(props);
         this.state={
-            taskList:[],
+            taskList:[
+                { 
+                    name:"Create Projects Page",
+                    initialTime:1588135855486,
+                    start:"",
+                    completed:false,
+                    description:"Page to see all the projects",
+                    duration:0,
+                    level:2 
+                },
+                {
+                    name:"Make Landing Page",
+                    initialTime:1588135855486,
+                    start:"",
+                    completed:false,
+                    description:"",
+                    duration:0,
+                    level:1
+                },
+                {
+                    name:"Do Something",
+                    initialTime:1588135855486,
+                    start:"",
+                    completed:false,
+                    description:"Do anything",
+                    duration:0,
+                    level:5
+                }],
         }
     }
     pushTask=(data)=>{
@@ -51,6 +78,7 @@ export default class Project extends Component {
             level: '',
             start:'',
             complete:'',
+            initialTime:'',
             
         })
     };

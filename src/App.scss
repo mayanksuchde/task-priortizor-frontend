@@ -1,0 +1,49 @@
+body{
+  margin:80px;
+
+}
+.form{
+  h3{
+    font-size: 30px;
+  }
+  margin:20px;
+  height:300px;
+  width: 600px;
+  form{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    input[type="text"]{
+      width: 70%;
+      margin: 6px 0;
+      height:20px;
+      font-size: 20px;
+      outline: none;
+      border:none;
+      border-bottom: 1px solid black;
+    }
+    textarea{
+      width: 60%;
+      height: 100px;
+      margin:6px 300px 0 0;
+      font-size: 14px;
+    }
+    
+  }
+}
+.task-list{
+
+}
+.task{
+  list-style-type: none;
+  width:70%;
+  height:100px;
+  border:1px solid;
+  margin:16px 0;
+  padding: 0 16px;
+  border-radius: 20px;
+  
+  h5{
+    margin:4px ;
+  }
+}

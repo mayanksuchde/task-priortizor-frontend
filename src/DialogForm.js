@@ -16,12 +16,16 @@ export default function DialogForm({pushTask}) {
 
   return (
     <div>
-      <Button variant="outlined" color="primary" onClick={handleClickOpen}>
-        Open form dialog
-      </Button>
-      <Dialog open={open} onClose={handleClose} aria-labelledby="form-dialog-title">
-      <AddTask pushTask={pushTask} handleClose={handleClose} />
-      </Dialog>
+        <Button variant="outlined" color="primary" onClick={handleClickOpen}>
+            Create a Task
+        </Button>
+        <Dialog open={open} onClose={handleClose} aria-labelledby="form-dialog-title">
+            <div className="form">
+
+            <h3>Create a Task</h3>
+            <AddTask pushTask={pushTask} handleClose={handleClose} />
+            </div>
+        </Dialog>
     </div>
   );
 }

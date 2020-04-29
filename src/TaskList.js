@@ -1,8 +1,9 @@
 import React from 'react'
 import Task from './Task';
 function TaskList({list,startTimer,pauseTimer}){
+    
     return(
-        <ul>
+        <ul className="task-list">
             {list.map((task,i)=>(
                 <Task 
                     key={i} 
