@@ -8,8 +8,8 @@ export default class Projects extends Component {
                 <h1>Projects</h1>
                 <div>
                     <Link to="/project" >
-                        <div>
-                            
+                        <div className='project-tab'>
+                            <h4>Project 1</h4>
                         </div>
                     </Link>
                 </div>

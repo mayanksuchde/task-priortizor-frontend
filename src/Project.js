@@ -39,7 +39,7 @@ export default class Project extends Component {
     }
     pushTask=(data)=>{
         let newList=this.state.taskList;
-        newList.push(data);
+        newList.unshift(data);
         this.setState({
             taskList:newList
         });

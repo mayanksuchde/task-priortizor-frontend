@@ -61,7 +61,7 @@ export default class Dashboard extends Component {
         return (
             <div>
                 <h1>Dashboard</h1>
-                <h3>Project 1</h3>
+                <h3>Example Project</h3>
                 <div className="treemap">
                     <TreeMap 
                         height={600}

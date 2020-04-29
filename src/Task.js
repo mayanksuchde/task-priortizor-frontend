@@ -78,21 +78,27 @@ export default class Task extends Component {
                 <h5>{task.name}</h5>
                 
                 <div className="buttons">
-                    <Countdown 
+                    {(!task.completed)?
+                        (<Countdown 
                         date={task.initialTime+this.CountdownTime(task.level)}
                         autoStart={false}
                         precision={3}
                         renderer={this.renderer}
                         onStart={()=>startTimer(id)}
                         onPause={()=>pauseTimer(id)}
-                        />
+                        />):
+                        (<span></span>)
+                    }
+                    
                     <Button 
                         variant='contained'
                         startIcon={<CheckCircle/>}
                         color='default'
                         onClick={()=>{completeTask(id)}}
                         >Complete</Button>
-        {(task.duration!==0)?(<p className='duration'>Total Duration:<span>{task.duration/1000} seconds</span></p>):(<p></p>) }
+                        <p className='duration'>Total Duration:
+        {(task.duration!==0)?(<span>{task.duration/1000} seconds</span>):(<span></span>) }
+                        </p>
                 </div>
             </li>
         )
