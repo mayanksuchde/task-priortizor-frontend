@@ -10,13 +10,7 @@ export default class Task extends Component {
             time:0,
         }
     }
-    // startWatch=(id)=>{
-    //     this.props.startTimer(id);
-    //     this.timer = setInterval(() => this.setState({
-    //         time: Date.now() - this.state.start
-    //     }), 1);
-        
-    // }
+
     CountdownTime=(level)=>{
         let time=0
         switch(level){
@@ -47,7 +41,7 @@ export default class Task extends Component {
         return time;
     }
     renderer=({api,hours,minutes,seconds})=>{
-        const {start,pause,isPaused}=api;
+        const {start,pause, isCompleted, isPaused}=api;
         const paused=isPaused();
         return(
             <div>{ (!paused)
@@ -105,8 +99,3 @@ export default class Task extends Component {
     }
 }
 
-//level1: 1-2hours;
-//level2: 4hours;
-//level3: 8hours;
-//level4: 14hours;
-//level5: 20hours;

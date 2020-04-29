@@ -86,7 +86,7 @@ export default class Project extends Component {
             description: '',
             level: '',
             start:'',
-            complete:'',
+            completed:false,
             initialTime:'',
             
         })
