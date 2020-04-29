@@ -10,7 +10,7 @@ export default class Project extends Component {
             taskList:[
                 { 
                     name:"Create Projects Page",
-                    initialTime:1588135855486,
+                    initialTime:1588184419541,
                     start:"",
                     completed:false,
                     description:"Page to see all the projects",
@@ -19,7 +19,7 @@ export default class Project extends Component {
                 },
                 {
                     name:"Make Landing Page",
-                    initialTime:1588135855486,
+                    initialTime:1588184419541,
                     start:"",
                     completed:false,
                     description:"",
@@ -28,7 +28,7 @@ export default class Project extends Component {
                 },
                 {
                     name:"Do Something",
-                    initialTime:1588135855486,
+                    initialTime:1588184419541,
                     start:"",
                     completed:false,
                     description:"Do anything",
@@ -71,6 +71,15 @@ export default class Project extends Component {
         this.setState({taskList:newList})
         
     }
+    completeTask=(id)=>{
+        let newList=this.state.taskList;
+        newList.forEach((task,index)=>{
+            if(index===id){
+                task.completed=true;
+            }
+        })
+        this.setState({taskList:newList})
+    }
     resetForm=()=>{
         this.setState({
             name: '',
@@ -90,7 +99,11 @@ export default class Project extends Component {
                 <h2>Project 1</h2>
                 <div className="form-container">
                     <DialogForm pushTask={this.pushTask} />
-                    <TaskList list={taskList} startTimer={this.startTimer} pauseTimer={this.pauseTimer} />
+                    <TaskList 
+                        list={taskList} 
+                        startTimer={this.startTimer} 
+                        pauseTimer={this.pauseTimer}
+                        completeTask={this.completeTask} />
                 </div>
             </div>
         )

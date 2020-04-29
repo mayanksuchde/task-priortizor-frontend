@@ -1,6 +1,6 @@
 import React from 'react'
 import Task from './Task';
-function TaskList({list,startTimer,pauseTimer}){
+function TaskList({list,startTimer,pauseTimer,completeTask}){
     
     return(
         <ul className="task-list">
@@ -10,7 +10,8 @@ function TaskList({list,startTimer,pauseTimer}){
                     id={i} 
                     task={task} 
                     startTimer={startTimer}
-                    pauseTimer={pauseTimer} />))}
+                    pauseTimer={pauseTimer}
+                    completeTask={completeTask} />))}
         </ul>
     )
 }

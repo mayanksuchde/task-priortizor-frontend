@@ -1,7 +1,7 @@
 import React,{Component} from 'react';
 import Countdown,{zeroPad} from 'react-countdown';
-
-
+import Button from '@material-ui/core/Button';
+import { Timer, CheckCircle,PauseCircleFilled } from '@material-ui/icons'
 
 export default class Task extends Component {
     constructor(props){
@@ -52,33 +52,48 @@ export default class Task extends Component {
         return(
             <div>{ (!paused)
                     ?(
-                        <span>
+                        <span className='timer'>
                             {zeroPad(hours)}:{zeroPad(minutes)}:{zeroPad(seconds)}
                         </span> 
                     ):(<span></span>)
                 }
                 
-                <button onClick={()=>{start();}}>Start</button>
-                <button onClick={()=>{pause()}}>Pause</button>
+                <Button 
+                    variant='contained' 
+                    color='primary' 
+                    startIcon={<Timer/>} 
+                    onClick={()=>{start();}}>Start</Button>
+                <Button 
+                    variant='contained' 
+                    color='secondary'
+                    startIcon={<PauseCircleFilled/>} 
+                    onClick={()=>{pause()}}>Pause</Button>
             </div>
         )
     }
     render() {
-        let {task,startTimer,pauseTimer,id}=this.props
+        let {task,startTimer,pauseTimer,id,completeTask}=this.props
         return(
-            <li className='task' draggable='true' >
+            <li className={(task.completed)?'task completed':'task'} draggable='true' >
                 <h5>{task.name}</h5>
                 
-                <button>Complete</button>
-                <Countdown 
-                    date={task.initialTime+this.CountdownTime(task.level)}
-                    autoStart={false}
-                    precision={3}
-                    renderer={this.renderer}
-                    onStart={()=>startTimer(id)}
-                    onPause={()=>pauseTimer(id)}
-                    />
-        {(task.duration!==0)?(<p>Total Duration:{task.duration/1000} seconds</p>):(<span></span>) }
+                <div className="buttons">
+                    <Countdown 
+                        date={task.initialTime+this.CountdownTime(task.level)}
+                        autoStart={false}
+                        precision={3}
+                        renderer={this.renderer}
+                        onStart={()=>startTimer(id)}
+                        onPause={()=>pauseTimer(id)}
+                        />
+                    <Button 
+                        variant='contained'
+                        startIcon={<CheckCircle/>}
+                        color='default'
+                        onClick={()=>{completeTask(id)}}
+                        >Complete</Button>
+        {(task.duration!==0)?(<p className='duration'>Total Duration:<span>{task.duration/1000} seconds</span></p>):(<p></p>) }
+                </div>
             </li>
         )
     }

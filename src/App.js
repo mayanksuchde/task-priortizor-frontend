@@ -6,6 +6,7 @@ import NavBar from './NavBar';
 import Home from './Home';
 import Projects from './Projects';
 import Dashboard from './Dashboard';
+import LearnMore from './LearnMore';
 
 function App() {
   return (
@@ -17,6 +18,7 @@ function App() {
           <Route path='/projects' render={(props)=>{return <Projects {...props} />}} />
           <Route path='/dashboard' render={(props)=>{return <Dashboard {...props} />}} />
           <Route path='/project' render={(props)=>{return <Project {...props} />}} />
+          <Route path='/learnmore' render={(props)=>{return <LearnMore {...props} />}} />
         </Switch>
         
         

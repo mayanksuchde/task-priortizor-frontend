@@ -6,19 +6,19 @@
     {
     "name": "Done before Time",
     "group": "A",
-    "value": 28,
+    "value": 45,
     "colname": "level3"
     },
     {
     "name": "Done on time",
     "group": "A",
-    "value": 19,
+    "value": 9,
     "colname": "level3"
     },
     {
     "name": "Past Deadline",
     "group": "C",
-    "value": 18,
+    "value": 10,
     "colname": "level3"
     }
     ],
