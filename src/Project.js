@@ -71,13 +71,26 @@ export default class Project extends Component {
         this.setState({taskList:newList})
         
     }
+    completeTimer=(id)=>{
+        let currentTime=Date.now();
+        let newList=this.state.taskList;
+        
+        newList.forEach((task,index)=>{
+            if(index===id){
+                task.completed=true;
+                task.duration+=(currentTime-this.state.taskList[id].start);
+                task.date_end = currentTime;
+            }
+        });
+        this.setState({taskList:newList});
+    }
     resetForm=()=>{
         this.setState({
             name: '',
             description: '',
             level: '',
             start:'',
-            complete:'',
+            completed:false,
             initialTime:'',
             
         })
@@ -90,7 +103,7 @@ export default class Project extends Component {
                 <h2>Project 1</h2>
                 <div className="form-container">
                     <DialogForm pushTask={this.pushTask} />
-                    <TaskList list={taskList} startTimer={this.startTimer} pauseTimer={this.pauseTimer} />
+                    <TaskList list={taskList} startTimer={this.startTimer} pauseTimer={this.pauseTimer} completeTimer={this.completeTimer}/>
                 </div>
             </div>
         )

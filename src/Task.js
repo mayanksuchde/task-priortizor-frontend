@@ -10,13 +10,7 @@ export default class Task extends Component {
             time:0,
         }
     }
-    // startWatch=(id)=>{
-    //     this.props.startTimer(id);
-    //     this.timer = setInterval(() => this.setState({
-    //         time: Date.now() - this.state.start
-    //     }), 1);
-        
-    // }
+
     CountdownTime=(level)=>{
         let time=0
         switch(level){
@@ -47,7 +41,7 @@ export default class Task extends Component {
         return time;
     }
     renderer=({api,hours,minutes,seconds})=>{
-        const {start,pause,isPaused}=api;
+        const {start,pause, isCompleted, isPaused}=api;
         const paused=isPaused();
         return(
             <div>{ (!paused)
@@ -59,33 +53,36 @@ export default class Task extends Component {
                 }
                 
                 <button onClick={()=>{start();}}>Start</button>
-                <button onClick={()=>{pause()}}>Pause</button>
+                <button onClick={()=>{pause();}}>Pause</button>
+                <button onClick={()=>{isCompleted();}}>Complete</button>
             </div>
         )
     }
     render() {
-        let {task,startTimer,pauseTimer,id}=this.props
+        let {task,startTimer,pauseTimer,completeTimer,id}=this.props;
+        let duration = task.duration/1000,
+            hours = Math.floor(duration/3600),
+            minutes = Math.floor((duration%3600)/60),
+            seconds = Math.floor((duration%3600)%60);
+        
+
         return(
             <li className='task' draggable='true' >
                 <h5>{task.name}</h5>
-                
-                <button>Complete</button>
+                {/* <button onClick={()=>{complete();}}>Complete</button> */}
                 <Countdown 
                     date={task.initialTime+this.CountdownTime(task.level)}
                     autoStart={false}
                     precision={3}
                     renderer={this.renderer}
+                    onComplete={()=>completeTimer}
                     onStart={()=>startTimer(id)}
                     onPause={()=>pauseTimer(id)}
+                    onComplete={()=>completeTimer(id)}
                     />
-        {(task.duration!==0)?(<p>Total Duration:{task.duration/1000} seconds</p>):(<span></span>) }
+        {(task.duration!==0)?(<p>Total Duration:{hours} hours, {minutes} minutes, {seconds} seconds</p>):(<span></span>) }
             </li>
         )
     }
 }
 
-//level1: 1-2hours;
-//level2: 4hours;
-//level3: 8hours;
-//level4: 14hours;
-//level5: 20hours;
