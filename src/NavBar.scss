@@ -1,0 +1,146 @@
+$brainflix-blue:#0095ff;
+$mercury:#E1E1E1;
+$silver:#AFAFAF;
+$alabaster:#FAFAFA;
+
+
+//Screen size
+$tablet:768px;
+$laptop:1024px;
+$desktop:1440px;
+@mixin margin {
+    margin:0 16px;
+    @media (min-width:$tablet) {
+      margin:0 24px;
+    }
+    @media (min-width:$desktop) {
+      margin:0 180px;
+    }
+}
+
+@mixin dates(){
+  color:$silver;
+  font-weight: lighter;
+}
+
+@mixin h5(){
+  font-size:12px;
+  line-height: 20px;
+  font-weight: 500;
+  color: $silver;
+}
+
+@mixin input {
+  border-radius: 4px;
+  border:solid 1px $mercury;
+  background-color: $alabaster;
+  width: 100%;
+  font-family:'AvenirNext' ;
+  margin-bottom: 16px;
+  padding:5px 0 0 12px;
+ 
+  &:focus{
+      border:solid 3px $brainflix-blue;
+      outline: none;
+  }
+}
+
+@mixin button{
+
+  background-color:$brainflix-blue;
+  color:white;
+  border-radius: 5px;
+  width: 100%;
+  height: 48px;
+  border:none;
+  font-family: 'AvenirNext';
+  font-weight: 500;
+  @media (min-width:$tablet) {
+    width: 160px;
+    
+  } 
+}
+nav{
+    
+    background-color: blue;
+    width:100%;
+    display:flex;
+    flex-direction: column;
+    height:168px;
+    
+    @media (min-width:$tablet) {
+        height: 80px;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+    }
+    .logo{
+        height:48px;
+        
+        img{
+            height:32px;
+            padding-top: 8px;
+        }
+    }
+    .nav_right{
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        @media (min-width:$tablet) {
+            flex-direction: row;
+        }
+        input{
+            height:48px;
+            padding-left: 32px;
+            background-color: $alabaster;
+           
+            background-repeat: no-repeat;
+            background-position-x: 10px;
+            background-position-y: 14px; 
+            border-radius: 4px;
+            border:solid 1px $mercury;
+            @media (min-width:$tablet) {
+                margin-right:24px;
+                min-width:252px;
+            }
+        }
+        div{
+            display: flex;
+            justify-content: space-between;
+            margin-top: 8px;
+            
+            @media (min-width:$tablet) {
+                margin-top:0px;
+                
+            }
+            .upload-link{
+                background-color: $brainflix-blue;
+                width: 75%;
+                height:48px;
+                display: flex;
+                border: none;
+                border-radius: 4px;
+                color: white;
+                text-decoration: none;
+                font-weight: 500;
+                line-height: 48px;
+                justify-content: center;
+                div{
+                    margin-top: 0;
+                }
+                @media (min-width:$tablet) {
+                    margin-right:24px;
+                    padding:0 16px;
+                }
+                img{
+                    padding-right: 8px;
+                }
+            }
+            .profile_pic{
+                height: 48px;
+                width: 48px;
+                border-radius:50%;
+            }
+        }
+    }
+}

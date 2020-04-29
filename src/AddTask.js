@@ -77,10 +77,10 @@ export default class AddTask extends Component {
                         <input onChange={e=>this.setState({name:e.target.value})} type="text" name="name" value={this.state.name} id="" placeholder='Enter Title'/>                
                         <select id="level" onChange={e=>this.setState({level:e.target.value})} value={this.state.level}>
                             <option value="1">Level - 1: Less than 2 hours</option>
-                            <option value="2">Level - 2 2-4 hours</option>
-                            <option value="3">Level - 3 4-8 hours</option>
-                            <option value="4">Level - 4 8-14 hours</option>
-                            <option value="5">Level - 5 14-20 hours</option>
+                            <option value="2">Level - 2: 2-4 hours</option>
+                            <option value="3">Level - 3: 4-8 hours</option>
+                            <option value="4">Level - 4: 8-14 hours</option>
+                            <option value="5">Level - 5: 14-20 hours</option>
                         </select>
                         <textarea onChange={e=>this.setState({description:e.target.value})} name="description" placeholder="Describe the Task" value={this.state.description} >
                         </textarea>                     

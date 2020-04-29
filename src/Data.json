@@ -1,0 +1,125 @@
+{
+    "children": [
+    {
+    "name": "Level 1",
+    "children": [
+    {
+    "name": "Done before Time",
+    "group": "A",
+    "value": 28,
+    "colname": "level3"
+    },
+    {
+    "name": "Done on time",
+    "group": "A",
+    "value": 19,
+    "colname": "level3"
+    },
+    {
+    "name": "Past Deadline",
+    "group": "C",
+    "value": 18,
+    "colname": "level3"
+    }
+    ],
+    "colname": "level 1"
+    },
+    {
+    "name": "Level 2",
+    "children": [
+    {
+        "name": "Done before time",
+        "group": "C",
+        "value": 14,
+        "colname": "level3"
+    },
+    {
+        "name": "Done on time",
+        "group": "A",
+        "value": 11,
+        "colname": "level3"
+    },
+    {
+        "name": "Past Deadline",
+        "group": "B",
+        "value": 15,
+        "colname": "level3"
+    }
+    ],
+    "colname": "level2"
+    },
+    {
+        "name": "Level 3",
+        "children": [
+        {
+            "name": "Done before time",
+            "group": "C",
+            "value": 14,
+            "colname": "level3"
+        },
+        {
+            "name": "Done on time",
+            "group": "A",
+            "value": 11,
+            "colname": "level3"
+        },
+        {
+            "name": "Past Deadline",
+            "group": "B",
+            "value": 15,
+            "colname": "level3"
+        }
+        ],
+        "colname": "level3"
+    },
+        {
+        "name": "Level 4",
+        "children": [
+        {
+        "name": "Done before time",
+        "group": "C",
+        "value": 14,
+        "colname": "level3"
+        },
+        {
+        "name": "Done on time",
+        "group": "A",
+        "value": 11,
+        "colname": "level3"
+        },
+        {
+        "name": "Past Deadline",
+        "group": "B",
+        "value": 15,
+        "colname": "level3"
+        }
+        ],
+        "colname": "level4"
+    },
+        {
+            "name": "Level 5",
+            "children": [
+            {
+            "name": "Done before time",
+            "group": "C",
+            "value": 14,
+            "colname": "level3"
+            },
+            {
+            "name": "Done on time",
+            "group": "A",
+            "value": 11,
+            "colname": "level3"
+            },
+            {
+            "name": "Past Deadline",
+            "group": "B",
+            "value": 15,
+            "colname": "level3"
+            }
+            ],
+            "colname": "level5"
+        }
+    ],
+    "name": "Project 1"
+}
