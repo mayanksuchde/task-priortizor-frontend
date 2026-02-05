@@ -11,7 +11,7 @@
     "@testing-library/user-event": "^7.2.1",
     "d3": "^5.16.0",
     "immutability-helper": "^3.0.2",
-    "node-sass": "^4.14.0",
+    "node-sass": "^9.0.0",
     "react": "^16.13.1",
     "react-beautiful-dnd": "^13.0.0",
     "react-countdown": "^2.2.1",
@@ -20,7 +20,7 @@
     "react-dnd-html5-backend": "^10.0.2",
     "react-dom": "^16.13.1",
     "react-router-dom": "^5.1.2",
-    "react-scripts": "3.4.1"
+    "react-scripts": "5.0.1"
   },
   "scripts": {
     "start": "react-scripts start",
